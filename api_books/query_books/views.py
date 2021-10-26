@@ -7,7 +7,7 @@ from .services import info_books
 
 def query_books(request):
     if request.method == 'GET':
-        return render(request, 'query_books/home.html')
+        return render(request, 'query_books/base.html')
     if request.method == 'POST':
 
         author = request.POST.get('author')

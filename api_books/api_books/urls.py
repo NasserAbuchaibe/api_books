@@ -16,7 +16,9 @@ Including another URLconf
 
 from django.urls import path
 from django.conf.urls import include
+from query_books import views as q_views
 
 urlpatterns = [
     path('', include('api.urls')),
+    path('qbooks/', q_views.query_books, name='query-books'),
 ]

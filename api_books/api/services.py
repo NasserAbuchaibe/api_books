@@ -7,7 +7,6 @@ def get_books(author):
     """
     Get all books from the API
     """
-
     queries = {'q': author}
     response = requests.get(url, params=queries)
     if response.status_code == 200:
