@@ -1,14 +1,24 @@
 import requests
 
+# api endpoint
 url = 'https://www.googleapis.com/books/v1/volumes'
 
 
 def get_books(author):
-    """
-    Get all books from the API
+    """[Consult the endpoint of the google books api
+        and filter and organize the data]
+
+    Args:
+        author ([str]): [Author name]
+
+    Returns:
+        [dict]: [Information about the author's books or books about the
+                author or the status code if the request fails]
     """
     queries = {'q': author}
     response = requests.get(url, params=queries)
+    
+    # Filter and organize the received data
     if response.status_code == 200:
         data = response.json()
         info_books = data = data['items']
